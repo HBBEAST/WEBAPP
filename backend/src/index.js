@@ -9,6 +9,10 @@ const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
 
+app.get('/', (req, res) => {
+  res.send('API is running 🚀');
+});
+
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*',
   credentials: true,
@@ -32,5 +36,5 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
