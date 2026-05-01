@@ -3,7 +3,9 @@ import axios from 'axios';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
-  baseURL: API_URL ? `${API_URL}/api` : '/api',
+  baseURL: API_URL
+    ? `${API_URL}/api`
+    : 'https://webapp-production-7ce4.up.railway.app/api',
 });
 
 api.interceptors.request.use((config) => {
